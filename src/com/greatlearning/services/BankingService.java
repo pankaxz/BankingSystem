@@ -43,15 +43,9 @@ public class BankingService {
             customer.setBalance(customer.getBalance()-amount);
             switch (operation)
             {
-                case "withdraw":
-                        System.out.println("Amount deducted successfully");
-                    break;
-
-                case "transfer":
-                    System.out.println("Amount transferred successfully");
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + operation);
+                case "withdraw" -> System.out.println("Amount deducted successfully");
+                case "transfer" -> System.out.println("Amount transferred successfully");
+                default -> throw new IllegalStateException("Unexpected value: " + operation);
             }
             System.out.println("Remaining balance : "+ customer.getBalance());
         }
