@@ -50,6 +50,8 @@ public class BankingService {
                 case "transfer":
                     System.out.println("Amount transferred successfully");
                     break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + operation);
             }
             System.out.println("Remaining balance : "+ customer.getBalance());
         }

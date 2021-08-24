@@ -42,32 +42,17 @@ public class Driver {
                     option = sc.nextInt();
 
                     switch (option) {
-                        case 0:
-                            option = 0;
-                            bankingService.logout();
-                        break;
-
-                        case 1:
-                            bankingService.deposit(loggedInCustomer);
-                        break;
-
-                        case 2:
-                            bankingService.withdraw(loggedInCustomer, "withdraw");
-                        break;
-
-                        case 3:
-                            bankingService.transfer(loggedInCustomer);
-                        break;
-
-                        case 4:
-                            bankingService.getInfo(loggedInCustomer);
-                        break;
+                        case 0 -> bankingService.logout();
+                        case 1 -> bankingService.deposit(loggedInCustomer);
+                        case 2 -> bankingService.withdraw(loggedInCustomer, "withdraw");
+                        case 3 -> bankingService.transfer(loggedInCustomer);
+                        case 4 -> bankingService.getInfo(loggedInCustomer);
+                        default -> System.out.println("Unexpected value: " + option + ", please enter correct option.");
                     }
                 }
                 while(option!=0);
             }
             else{
-                //throw exception
                 System.out.println("Please enter valid credentials");
             }
         }
