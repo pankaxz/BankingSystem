@@ -77,6 +77,7 @@ public class BankingService {
             System.out.println("OTP Validation successful");
             System.out.println("Enter the recipient's account number");
             toBeTransferredAccountNo = sc.nextInt();
+
             Customer recipient = validateAccountNumber(toBeTransferredAccountNo, customerData.getCustomerDB());
 
             if( recipient != null){
@@ -107,7 +108,8 @@ public class BankingService {
             Customer guest = validateAccountNumber(guestAccountNumber, customerData.getCustomerDB());
             if(guest!= null && guest.getPassword().equals(guestAccountPassword))
             {
-                System.out.println(guest.getBalance());
+                System.out.println("Account holder's name : "+guest.getName());
+                System.out.println("Balance : "+guest.getBalance());
             }
             else {System.out.println("Invalid credentials");}
         }
@@ -126,5 +128,4 @@ public class BankingService {
         System.out.println("Customer not found");
         return null;
     }
-
 }
